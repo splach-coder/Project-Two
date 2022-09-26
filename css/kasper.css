@@ -1,8 +1,55 @@
 /*Start VAriables*/
 :root {
 	--main-color: #19c8fa;
+	--transparent-color: rgb(15 116 143 / 70%);
+	--section-padding: 100px;
 }
 /*End VAriables*/
+/*Start Components*/
+.main-heading {
+	text-align: center;
+}
+
+.main-heading h2 {
+	font-weight: normal;
+	font-style: 40px;
+	position: relative;
+	margin-bottom: 70px;
+	text-transform: uppercase;
+}
+
+.main-heading h2::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 2px;
+	background-color: #333;
+	bottom: -30px;
+	width: 120px;
+}
+
+.main-heading h2::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 14px;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 2px solid #333;
+	width: 14px;
+	bottom: -36px;
+}
+
+.main-heading p {
+	width: 550px;
+	margin: 0 auto 100px;
+	max-width: 100%;
+	line-height: 2;
+	color: #777;
+}
+/*End Components*/
 /*Start Global Rules*/
 *,
 *::after,
@@ -54,10 +101,10 @@ ul {
 /*End Global Rules*/
 /*Start header*/
 header {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: 2;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 2;
 }
 
 header .container {
@@ -94,7 +141,7 @@ nav .toggle-menu {
 
 @media (max-width: 767px) {
 	nav .toggle-menu {
-        display: block;
+		display: block;
 		color: white;
 		font-size: 22px;
 	}
@@ -119,9 +166,9 @@ nav ul {
 		background-color: rgb(0 0 0 / 50%);
 	}
 
-    nav ul li a{
-        padding: 15px !important;
-    }
+	nav ul li a {
+		padding: 15px !important;
+	}
 }
 
 nav ul li a {
@@ -160,19 +207,144 @@ nav .form i {
 }
 /*End header*/
 /*Start Landing*/
-.landing{
-    min-height: 100vh;
-    background-color: #a2a2a2;
-    background-image: url();
-    background-size: cover;
+.landing {
+	min-height: 100vh;
+	background-color: #a2a2a2;
+	background-image: url(../img/artur-aldyrkhanov-jCbIl3L-MRk-unsplash.jpg);
+	background-size: cover;
 }
 
-.landing .overlay{
-    position: relative;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 60%);
+.landing .overlay {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0 0 0 / 60%);
+}
+
+.landing .text {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50%;
+	padding: 50px;
+	color: white;
+	background-color: var(--transparent-color);
+	display: flex;
+	justify-content: flex-end;
+}
+
+.landing .text .content {
+	max-width: 500px;
+}
+
+.landing .text h2 {
+	font-weight: normal;
+	font-size: 32px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+.landing .text p {
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.landing .change-background {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #ddd;
+	cursor: pointer;
+}
+
+@media (max-width: 767px) {
+	.landing .text {
+		width: 100%;
+	}
+
+	.landing .text .content {
+		max-width: 100%;
+	}
+
+	.landing .change-background {
+		display: none;
+	}
+}
+
+.landing .fa-angle-left {
+	left: 30px;
+}
+.landing .fa-angle-right {
+	right: 30px;
+}
+.landing .bullets {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 30px;
+	display: flex;
+}
+.landing .bullets ul {
+	display: flex;
+}
+.landing .bullets li {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	border: 1px solid white;
+	border-radius: 50%;
+	margin-right: 15px;
+	cursor: pointer;
+}
+.landing .bullets li.active {
+	background-color: var(--main-color);
+	border-color: var(--main-color);
 }
 /*End Landing*/
+/* Start Services */
+.services {
+	padding: var(--section-padding) 0;
+}
+
+@media (min-width: 768px) {
+	.services .services-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+		grid-column-gap: 40px;
+		grid-row-gap: 60px;
+	}
+}
+
+.services .srv-box {
+	display: flex;
+}
+
+.services .srv-box i {
+	margin-right: 50px;
+}
+
+@media (max-width : 767px){
+	.services .srv-box {
+		flex-direction: column;
+		text-align: center;
+		margin: 0 0 40px;
+	}
+
+	.services .srv-box i {
+		margin: 0 auto 40px;
+	}
+}
+
+.services .srv-box h3 {
+	margin-bottom: 30px;
+	color: var(--main-color);
+}
+.services .srv-box p {
+	line-height: 2;
+	color: #777;
+}
+
+/* End Services */
