@@ -1,3 +1,8 @@
+/*Start VAriables*/
+:root {
+	--main-color: #19c8fa;
+}
+/*End VAriables*/
 /*Start Global Rules*/
 *,
 *::after,
@@ -11,6 +16,9 @@
 
 html {
 	scroll-behavior: smooth;
+}
+
+body {
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -44,3 +52,127 @@ ul {
 	}
 }
 /*End Global Rules*/
+/*Start header*/
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+header .container::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	height: 1px;
+	background-color: #a2a2a2;
+	width: calc(100% - 30px);
+	left: 15px;
+}
+
+header .logo img {
+	height: 40px;
+}
+
+header nav {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+nav .toggle-menu {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	nav .toggle-menu {
+        display: block;
+		color: white;
+		font-size: 22px;
+	}
+}
+
+nav ul {
+	display: flex;
+}
+
+@media (max-width: 767px) {
+	nav ul {
+		display: none;
+	}
+
+	nav .toggle-menu:hover + ul {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		background-color: rgb(0 0 0 / 50%);
+	}
+
+    nav ul li a{
+        padding: 15px !important;
+    }
+}
+
+nav ul li a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+	transition: .3s;
+	padding: 40px 10px;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+	color: var(--main-color);
+	border-bottom: 1px solid var(--main-color);
+}
+
+nav .form {
+	width: 40px;
+	height: 30px;
+	position: relative;
+	margin-left: 30px;
+	border-left: 1px solid #fff;
+}
+
+nav .form i {
+	color: white;
+	position: absolute;
+	font-size: 20px;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+/*End header*/
+/*Start Landing*/
+.landing{
+    min-height: 100vh;
+    background-color: #a2a2a2;
+    background-image: url();
+    background-size: cover;
+}
+
+.landing .overlay{
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+/*End Landing*/
