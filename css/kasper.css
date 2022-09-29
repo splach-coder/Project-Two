@@ -1008,7 +1008,7 @@ nav .form i {
 /* End Subscribe */
 /* Start contact us */
 .contact {
-	padding: var(--section-padding);
+	padding: var(--section-padding) 0;
 }
 
 .contact .content {
@@ -1016,25 +1016,37 @@ nav .form i {
 	justify-content: space-between;
 }
 
+@media (max-width: 767px) {
+	.contact .content {
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 767px) {
+	.contact .content form {
+		flex-basis: 100%;
+	}
+}
+
 .contact .content form {
 	flex-basis: 70%;
 }
 
-.contact .content .main-input {
+.contact .content form .main-input {
 	padding: 20px;
 	display: block;
 	border: 1px solid #ccc;
 	width: 100%;
 	margin-bottom: 30px;
 }
-.contact .content .main-input:focus {
+.contact .content form .main-input:focus {
 	outline: none;
 }
-.contact .content textarea.main-input {
+.contact .content form textarea.main-input {
 	height: 200px;
 }
 
-.contact .content input[type="submit"] {
+.contact .content form input[type="submit"] {
 	background-color: var(--main-color);
 	color: white;
 	padding: 20px;
@@ -1046,14 +1058,112 @@ nav .form i {
 }
 
 .contact .content .info {
+	flex-basis: 25%;
 }
 
 .contact .content .info h4 {
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	font-weight: 500;
+	font-size: 18px;
 }
 
 .contact .content .info .phone {
+	display: block;
+	color: #777;
+	margin-bottom: 10px;
 }
 
 .contact .content .info h4:nth-of-type(2) {
+	margin-top: 90px;
+}
+
+.contact .content .info address {
+	color: #777;
+	line-height: 2;
+}
+
+@media (max-width: 767px) {
+	.contact .content .info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 40px;
+	}
+
+	.contact .content .info h4 {
+		margin-bottom: 10px;
+	}
+
+	.contact .content .info div {
+		flex-basis: 45%;
+		min-height: 100px;
+		max-height: 100px;
+		text-align: center;
+	}
+
+	.contact .content .info address {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.contact .content .info h4:nth-of-type(2) {
+		margin: 0;
+	}
+
+	.n123 {
+		display: none;
+	}
 }
 /* End contact us */
+/* Start Footer */
+.footer {
+	padding: calc(var(--section-padding) / 2) 0;
+	background-image: url(../img/long-exposure-7169151_1920.jpg);
+	background-size: cover;
+	text-align: center;
+	position: relative;
+	color: white;
+}
+
+.footer::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: rgb(0 0 0 / 60%);
+	width: 100%;
+	height: 100%;
+}
+
+.footer .container {
+	position: relative;
+}
+
+.footer img {
+	margin-bottom: 20px;
+	height: 50px;
+}
+
+.footer p {
+	text-transform: uppercase;
+	padding: 20px;
+	border-bottom: 1px solid white;
+	font-size: 22px;
+	width: fit-content;
+	margin: 20px auto;
+}
+
+.footer .social-icons i {
+	padding: 10px 20px;
+}
+
+.footer .copyright {
+	margin-top: 60px;
+}
+
+.footer .copyright span {
+	font-weight: bold;
+	color: var(--main-color);
+}
+/* End Footer */
