@@ -1083,6 +1083,10 @@ nav .form i {
 	line-height: 2;
 }
 
+.contact .content .info div:first-child {
+	margin-bottom: 50px;
+}
+
 @media (max-width: 767px) {
 	.contact .content .info {
 		display: flex;
