@@ -417,10 +417,6 @@ nav .form i {
 }
 /* End Design */
 /* Start Portfolio */
-.portfolio {
-	padding: var(--section-padding) 0;
-}
-
 .portfolio .shuffle {
 	display: flex;
 	justify-content: center;
@@ -1013,5 +1009,51 @@ nav .form i {
 /* Start contact us */
 .contact {
 	padding: var(--section-padding);
+}
+
+.contact .content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact .content form {
+	flex-basis: 70%;
+}
+
+.contact .content .main-input {
+	padding: 20px;
+	display: block;
+	border: 1px solid #ccc;
+	width: 100%;
+	margin-bottom: 30px;
+}
+.contact .content .main-input:focus {
+	outline: none;
+}
+.contact .content textarea.main-input {
+	height: 200px;
+}
+
+.contact .content input[type="submit"] {
+	background-color: var(--main-color);
+	color: white;
+	padding: 20px;
+	border: none;
+	display: flex;
+	margin-left: auto;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.contact .content .info {
+}
+
+.contact .content .info h4 {
+}
+
+.contact .content .info .phone {
+}
+
+.contact .content .info h4:nth-of-type(2) {
 }
 /* End contact us */
